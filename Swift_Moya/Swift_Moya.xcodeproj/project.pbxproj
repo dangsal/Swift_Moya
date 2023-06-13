@@ -18,6 +18,7 @@
 		D7C8D01D2A3841F000AA76E8 /* Swift_MoyaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8D01C2A3841F000AA76E8 /* Swift_MoyaUITestsLaunchTests.swift */; };
 		D7C8D0332A384E9700AA76E8 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = D7C8D0322A384E9700AA76E8 /* CombineMoya */; };
 		D7C8D0352A384E9700AA76E8 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = D7C8D0342A384E9700AA76E8 /* Moya */; };
+		D7C8D0382A384FAF00AA76E8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D7C8D0372A384FAF00AA76E8 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7C8D0382A384FAF00AA76E8 /* SnapKit in Frameworks */,
 				D7C8D0352A384E9700AA76E8 /* Moya in Frameworks */,
 				D7C8D0332A384E9700AA76E8 /* CombineMoya in Frameworks */,
 			);
@@ -190,6 +192,7 @@
 			packageProductDependencies = (
 				D7C8D0322A384E9700AA76E8 /* CombineMoya */,
 				D7C8D0342A384E9700AA76E8 /* Moya */,
+				D7C8D0372A384FAF00AA76E8 /* SnapKit */,
 			);
 			productName = Swift_Moya;
 			productReference = D7C8CFF62A3841EF00AA76E8 /* Swift_Moya.app */;
@@ -265,6 +268,7 @@
 			mainGroup = D7C8CFED2A3841EF00AA76E8;
 			packageReferences = (
 				D7C8D0312A384E9700AA76E8 /* XCRemoteSwiftPackageReference "Moya" */,
+				D7C8D0362A384FAF00AA76E8 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = D7C8CFF72A3841EF00AA76E8 /* Products */;
 			projectDirPath = "";
@@ -663,6 +667,14 @@
 				minimumVersion = 15.0.0;
 			};
 		};
+		D7C8D0362A384FAF00AA76E8 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -675,6 +687,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D7C8D0312A384E9700AA76E8 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
+		};
+		D7C8D0372A384FAF00AA76E8 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D7C8D0362A384FAF00AA76E8 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
