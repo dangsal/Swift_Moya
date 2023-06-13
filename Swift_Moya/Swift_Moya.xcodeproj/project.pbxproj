@@ -16,6 +16,8 @@
 		D7C8D0112A3841F000AA76E8 /* Swift_MoyaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8D0102A3841F000AA76E8 /* Swift_MoyaTests.swift */; };
 		D7C8D01B2A3841F000AA76E8 /* Swift_MoyaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8D01A2A3841F000AA76E8 /* Swift_MoyaUITests.swift */; };
 		D7C8D01D2A3841F000AA76E8 /* Swift_MoyaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8D01C2A3841F000AA76E8 /* Swift_MoyaUITestsLaunchTests.swift */; };
+		D7C8D0332A384E9700AA76E8 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = D7C8D0322A384E9700AA76E8 /* CombineMoya */; };
+		D7C8D0352A384E9700AA76E8 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = D7C8D0342A384E9700AA76E8 /* Moya */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7C8D0352A384E9700AA76E8 /* Moya in Frameworks */,
+				D7C8D0332A384E9700AA76E8 /* CombineMoya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +187,10 @@
 			dependencies = (
 			);
 			name = Swift_Moya;
+			packageProductDependencies = (
+				D7C8D0322A384E9700AA76E8 /* CombineMoya */,
+				D7C8D0342A384E9700AA76E8 /* Moya */,
+			);
 			productName = Swift_Moya;
 			productReference = D7C8CFF62A3841EF00AA76E8 /* Swift_Moya.app */;
 			productType = "com.apple.product-type.application";
@@ -255,6 +263,9 @@
 				Base,
 			);
 			mainGroup = D7C8CFED2A3841EF00AA76E8;
+			packageReferences = (
+				D7C8D0312A384E9700AA76E8 /* XCRemoteSwiftPackageReference "Moya" */,
+			);
 			productRefGroup = D7C8CFF72A3841EF00AA76E8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -642,6 +653,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D7C8D0312A384E9700AA76E8 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D7C8D0322A384E9700AA76E8 /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D7C8D0312A384E9700AA76E8 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
+		};
+		D7C8D0342A384E9700AA76E8 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D7C8D0312A384E9700AA76E8 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D7C8CFEE2A3841EF00AA76E8 /* Project object */;
 }
