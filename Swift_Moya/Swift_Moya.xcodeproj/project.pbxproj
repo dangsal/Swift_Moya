@@ -99,12 +99,11 @@
 		D7C8CFF82A3841EF00AA76E8 /* Swift_Moya */ = {
 			isa = PBXGroup;
 			children = (
-				D7C8CFF92A3841EF00AA76E8 /* AppDelegate.swift */,
-				D7C8CFFB2A3841EF00AA76E8 /* SceneDelegate.swift */,
-				D7C8CFFD2A3841EF00AA76E8 /* ViewController.swift */,
-				D7C8CFFF2A3841EF00AA76E8 /* Main.storyboard */,
-				D7C8D0022A3841F000AA76E8 /* Assets.xcassets */,
-				D7C8D0042A3841F000AA76E8 /* LaunchScreen.storyboard */,
+				D7C8D02D2A38423000AA76E8 /* Services */,
+				D7C8D02C2A38422600AA76E8 /* Models */,
+				D7C8D02B2A38422300AA76E8 /* Views */,
+				D7C8D02A2A38421D00AA76E8 /* ViewModels */,
+				D7C8D0292A38421800AA76E8 /* SupportingFiles */,
 				D7C8D0072A3841F000AA76E8 /* Info.plist */,
 			);
 			path = Swift_Moya;
@@ -125,6 +124,47 @@
 				D7C8D01C2A3841F000AA76E8 /* Swift_MoyaUITestsLaunchTests.swift */,
 			);
 			path = Swift_MoyaUITests;
+			sourceTree = "<group>";
+		};
+		D7C8D0292A38421800AA76E8 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				D7C8CFF92A3841EF00AA76E8 /* AppDelegate.swift */,
+				D7C8CFFB2A3841EF00AA76E8 /* SceneDelegate.swift */,
+				D7C8CFFF2A3841EF00AA76E8 /* Main.storyboard */,
+				D7C8D0022A3841F000AA76E8 /* Assets.xcassets */,
+				D7C8D0042A3841F000AA76E8 /* LaunchScreen.storyboard */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		D7C8D02A2A38421D00AA76E8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D7C8CFFD2A3841EF00AA76E8 /* ViewController.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D7C8D02B2A38422300AA76E8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D7C8D02C2A38422600AA76E8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D7C8D02D2A38423000AA76E8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
