@@ -56,5 +56,8 @@ final class ArticleTableViewCell: UITableViewCell {
         }
     }
     
-    
+    func configureLabel(text: String) {
+        self.titleLabel.text = text
+        self.descriptionLabel.text = text
+    }    
 }
