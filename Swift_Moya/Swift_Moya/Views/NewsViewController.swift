@@ -5,6 +5,7 @@
 //  Created by 이성호 on 2023/06/13.
 //
 
+import Combine
 import UIKit
 
 import SnapKit
@@ -21,6 +22,10 @@ final class NewsViewController: UIViewController {
     
     // MARK: - property
     
+    private let newsViewModel: NewsViewModel = NewsViewModel()
+    
+    private var cancellables = Set<AnyCancellable>()
+    
     // MARK: - life cycle
     
     override func viewDidLoad() {
@@ -28,6 +33,7 @@ final class NewsViewController: UIViewController {
         self.setupNavigationBar()
         self.setupLayout()
         self.setupDelegation()
+        self.setBinding()
     }
 
     // MARK: - func
@@ -51,18 +57,33 @@ final class NewsViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
     }
+    
+    private func setBinding() {
+        self.newsViewModel.$articles
+            .sink { [weak self] _ in
+                self?.tableView.reloadData()
+            }
+            .store(in: &self.cancellables)
+        
+        self.newsViewModel.errorMessgae
+            .sink { message in
+                print(message)
+            }
+            .store(in: &self.cancellables)
+    }
 
 }
 
 extension NewsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return self.newsViewModel.articles.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ArticleTableViewCell
         
-        cell.configureLabel(text: "안녕하세요")
+        let article = self.newsViewModel.articles[indexPath.row]
+        cell.configureLabel(article: article)
         return cell
     }
 }

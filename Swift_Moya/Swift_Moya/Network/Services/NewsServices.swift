@@ -8,11 +8,11 @@
 import Foundation
 import Moya
 
-enum ArticleServices {
+enum NewsServices {
     case fetchArticle(country: String)
 }
 
-extension ArticleServices: TargetType {
+extension NewsServices: TargetType {
     var baseURL: URL {
         return URL(string: "https://newsapi.org/v2")!
     }
