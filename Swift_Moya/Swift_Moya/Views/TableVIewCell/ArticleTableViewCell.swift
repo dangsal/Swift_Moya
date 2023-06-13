@@ -42,7 +42,7 @@ final class ArticleTableViewCell: UITableViewCell {
     private func setupLayout() {
         self.addSubview(self.titleLabel)
         self.titleLabel.snp.makeConstraints {
-            $0.top.equalTo(self.snp.top).inset(10)
+            $0.top.equalToSuperview().inset(10)
             $0.leading.equalTo(self.snp.leading).inset(20)
             $0.trailing.equalTo(self.snp.trailing).inset(20)
         }
@@ -50,14 +50,13 @@ final class ArticleTableViewCell: UITableViewCell {
         self.addSubview(self.descriptionLabel)
         self.descriptionLabel.snp.makeConstraints {
             $0.top.equalTo(self.titleLabel.snp.bottom).offset(10)
-            $0.leading.equalTo(self.titleLabel.snp.leading)
-            $0.trailing.equalTo(self.titleLabel.snp.trailing)
-            $0.bottom.equalTo(self.snp.bottom).inset(10)
+            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.bottom.equalToSuperview().inset(10)
         }
     }
     
     func configureLabel(article: Article) {
         self.titleLabel.text = article.title
-        self.descriptionLabel.text = article.desription
+        self.descriptionLabel.text = article.description
     }    
 }

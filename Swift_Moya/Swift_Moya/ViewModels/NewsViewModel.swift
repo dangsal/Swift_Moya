@@ -17,11 +17,7 @@ final class NewsViewModel {
     
     private let provider = MoyaProvider<NewsServices>()
     
-    @Published var articles = [Article]() {
-        didSet {
-            print("articles 는 " , articles)
-        }
-    }
+    @Published var articles = [Article]()
     
     let errorMessgae = PassthroughSubject<String, Never>()
     
@@ -35,17 +31,16 @@ final class NewsViewModel {
     
     func fetchNews() {
         self.provider.requestPublisher(.fetchArticle(country: "us"))
-            .map(NewsResponse.self, using: JSONDecoder())
+            .map(NewsResponse.self)
             .receive(on: DispatchQueue.main)
             .sink { completion in
                 switch completion {
                 case .failure(let error):
                     self.errorMessgae.send(error.localizedDescription)
                 case .finished:
-                    print("Finished")
+                    break
                 }
             } receiveValue: { response in
-                print("response: ", response)
                 self.articles = response.articles
             }
             .store(in: &self.cancellables)

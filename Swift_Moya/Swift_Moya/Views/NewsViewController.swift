@@ -60,12 +60,14 @@ final class NewsViewController: UIViewController {
     
     private func setBinding() {
         self.newsViewModel.$articles
+            .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
                 self?.tableView.reloadData()
             }
             .store(in: &self.cancellables)
         
         self.newsViewModel.errorMessgae
+            .receive(on: DispatchQueue.main)
             .sink { message in
                 print(message)
             }
