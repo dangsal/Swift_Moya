@@ -7,9 +7,16 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
+import SnapKit
+
+final class NewsViewController: UIViewController {
 
     // MARK: - ui compoent
+    
+    private let tableView: UITableView = {
+        let tableView = UITableView()
+        return tableView
+    }()
     
     // MARK: - property
     
